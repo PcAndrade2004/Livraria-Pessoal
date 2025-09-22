@@ -2,7 +2,7 @@ package view;
 
 import dao.LivroDAO;
 import dominio.Livro;
-import service.ConnectionFactory;
+import service.ConnectionImpl;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try (Connection conn = ConnectionFactory.getConnection()) {
+        try (Connection conn = ConnectionImpl.getConnection()) {
             System.out.println("Conexão com o banco de dados estabelecida com sucesso!");
 
             LivroDAO livroDAO = new LivroDAO(conn);
